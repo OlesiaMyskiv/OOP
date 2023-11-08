@@ -54,6 +54,7 @@ public class Trainer {  public String name;
         this.workInAge = workInAge;
     }
 
+    //Кількость років роботи тренера на даний момент
     private int calculateYearsOfWork() {
         int currentYear = java.time.Year.now().getValue();
         return currentYear - workInAge;
@@ -70,14 +71,14 @@ public class Trainer {  public String name;
 
 
 
-    // Перевантаження методу
+    // Перевантаження методу. Взаємодія поточного тренера з іншим тренером
     public void engageWithTrainer(Trainer otherTrainer) {
         System.out.println("Trainer " + getName() + " is engaging with another trainer " + otherTrainer.getName());
         System.out.println("Their skills include: " + getSkills() + " and " + otherTrainer.getSkills());
         System.out.println("——————————————————————————————");
     }
 
-    // Перевантаження методу
+    // Перевантаження методу. Взаємодію тренера з клієнтом
     public void engageWithTrainer(Member member) {
         System.out.println("Trainer " + getName() + " is engaging with member " + member.getName());
         System.out.println("Member's age is: " + member.getAge());

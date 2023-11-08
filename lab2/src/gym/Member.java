@@ -1,18 +1,33 @@
 package gym;
 
 class Member {
+    private int memberId;
     private String name;
     private int age;
     private String gender;
     private int weight;
     private int growth;
+    private int durationInMonths;  // Тривалість абонементу в місяцях
+    private double price;
 
-    public Member(String name, int age, String gender, int weight, int growth) {
+
+    public Member(int memberId, String name, int age, String gender, int weight, int growth, int durationInMonths, double price) {
+        this.memberId = memberId;
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.weight = weight;
         this.growth = growth;
+        this.durationInMonths = durationInMonths;
+        this.price = price;
+    }
+
+    public int getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
     }
 
     public String getName() {
@@ -55,18 +70,43 @@ class Member {
         this.growth = growth;
     }
 
+    public int getDurationInMonths() {
+        return durationInMonths;
+    }
+
+    public void setDurationInMonths(int durationInMonths) {
+        this.durationInMonths = durationInMonths;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getTotalCost() { // Розрахунок загальної вартості абонементу
+        return durationInMonths * price;
+    }
+
     void information() {
         System.out.println("——————————————————————————————");
+        System.out.println("Member 1 details:");
+        System.out.println("ID: " + getMemberId());
         System.out.println("Name: " + name);
-        System.out.println("Age :" + age);
-        System.out.println("Gender :" + gender);
-        System.out.println("Weight :" + weight);
-        System.out.println("Growth :" + growth);
+        System.out.println("Age:" + age);
+        System.out.println("Gender:" + gender);
+        System.out.println("Weight:" + weight);
+        System.out.println("Growth:" + growth);
+        System.out.println("Duration (months): " + getDurationInMonths());
+        System.out.println("Price per month: $" + getPrice());
+        System.out.println("Total cost: $" + getTotalCost());
         System.out.println("Body mass index: " + calculateBMI());
         System.out.println("——————————————————————————————");
     }
 
-    void isNeedToLostWight() {
+    void isNeedToLostWight() { //Підрахунок чи потрібно схуднути користувачу чи ні
         int need = growth - 100;
         if (weight >= (need + 5) && weight >= (need - 5)) {
             System.out.println("Your weigth is normal");
@@ -77,12 +117,12 @@ class Member {
     }
 
     public double calculateBMI() {
-        double heightInMeters = getGrowth() / 100.0; // перетворення з сантиметрів у метри
-        return weight / (heightInMeters * heightInMeters);
+        double heightInMeters = getGrowth() / 100.0; // Перетворення зросту з сантиметрів у метри
+        return weight / (heightInMeters * heightInMeters);// Розрахунок ІМТ
 
     }
 
-    public void interactWithMember(Trainer otherTrainer) {
+    public void interactWithMember(Trainer otherTrainer) { //Виведення інформації про взаємодію між членом спортзалу та тренером
         System.out.println("Member " + getName() + " is interacting with trainer " + otherTrainer.getName());
         System.out.println("Trainer's skills include: " + otherTrainer.getSkills());
         System.out.println("——————————————————————————————");

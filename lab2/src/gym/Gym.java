@@ -39,6 +39,7 @@ public class Gym {
         Gym.capacity = capacity;
     }
 
+    //Перевірки доступності спортзалу
     public void setOpenStatus(boolean status) {
         isOpen = status;
         if (status) {
@@ -50,6 +51,7 @@ public class Gym {
         }
     }
 
+    //Перевірки доступності спортзалу
     public void checkAvailability() {
         if (isOpen) {
             System.out.println("Gym '" + name + "' open and available for training.");
@@ -60,6 +62,7 @@ public class Gym {
         }
     }
 
+    //Метод дозволяє контролювати кількість відвідувачів
     public static void incrementOccupancy(int additionalPeople) {
         if (currentOccupancy + additionalPeople <= capacity) {
             currentOccupancy += additionalPeople;
@@ -71,6 +74,7 @@ public class Gym {
         }
     }
 
+    //Отримуємо інформацію про поточну кількість відвідувачів спортзалу
     public static int getCurrentOccupancy() {
         return currentOccupancy;
     }

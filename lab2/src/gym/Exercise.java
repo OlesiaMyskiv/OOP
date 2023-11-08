@@ -35,6 +35,7 @@ public class Exercise {
         this.reps = reps;
     }
 
+    //
     public static Exercise generateExercise(String name, int sets, int reps) {
         return new Exercise(name, sets, reps);
     }
@@ -55,14 +56,17 @@ public class Exercise {
         }
     }
 
-    public void executeExercise(Exercise otherExercise) {
+
+    public void executeExercise(Exercise otherExercise) { //Відслідковування виконання вправи,
         System.out.println("——————————————————————————————");
         System.out.println("Executing exercise: " + otherExercise.getName());
         System.out.println("This exercise is performed with " + otherExercise.getSets() + " sets and " + otherExercise.getReps() + " reps.");
         System.out.println("——————————————————————————————");
     }
 
+    //
     public Exercise copyExerciseWithNewData(String newName, int newSets, int newReps) {
         return new Exercise(newName, newSets, newReps);
     }
+
 }
