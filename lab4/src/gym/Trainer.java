@@ -92,8 +92,8 @@ public class Trainer {
 
     // Перевантаження методу. Взаємодію тренера з клієнтом
     public void engageWithTrainer(Member member) {
-        System.out.println("Trainer " + getName() + " is engaging with member " + member.getName());
-        System.out.println("Member's age is: " + member.getAge());
+        System.out.println("Trainer " + getName() + " is providing guidance to visitor " + member.getName());
+        System.out.println("The visitor is participating in a training session with the trainer.");
         System.out.println();
     }
 }

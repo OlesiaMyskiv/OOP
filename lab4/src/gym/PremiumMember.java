@@ -16,12 +16,8 @@ class PremiumMember extends Member {
         this.points = points;
     }
 
-    public void redeemPoints() {
+    public void redeemPoints() { // Виводить повідомлення про кількість накопичених балів
         System.out.println(getName() + " accumulates " + points + " points.");
-    }
-
-    public void managePoints() {
-
     }
 
     class PointsManager {

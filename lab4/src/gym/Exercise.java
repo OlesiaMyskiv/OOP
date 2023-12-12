@@ -47,7 +47,7 @@ public class Exercise {
         System.out.println("——————————————————————————————");
     }
 
-    // Рекурсія
+    // Обчислює загальну кількість повторень для заданої кількості підходів.
     int calculateTotalReps(int sets, int reps) {
         if (sets == 0) {
             return 0; // Базовий випадок, коли підходів більше не залишилось
@@ -57,7 +57,7 @@ public class Exercise {
     }
 
 
-    public void executeExercise(Exercise otherExercise) { //Відслідковування виконання вправи,
+    public void executeExercise(Exercise otherExercise) { //Відслідковування виконання вправи
         System.out.println("——————————————————————————————");
         System.out.println("Executing exercise: " + otherExercise.getName());
         System.out.println("This exercise is performed with " + otherExercise.getSets() + " sets and " + otherExercise.getReps() + " reps.");
@@ -65,7 +65,7 @@ public class Exercise {
     }
 
     //
-    public Exercise copyExerciseWithNewData(String newName, int newSets, int newReps) {
+    public Exercise copyExerciseWithNewData(String newName, int newSets, int newReps) { //Метод, який створює копію вправи з новими даними.
         return new Exercise(newName, newSets, newReps);
     }
 

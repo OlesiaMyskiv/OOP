@@ -3,8 +3,8 @@ package gym;
 public class Gym {
     private String name;
     private boolean isOpen;
-    private static int currentOccupancy = 0;
-    private static int capacity = 60;
+    private static int currentOccupancy = 0; //Поточна зайнятість
+    private static int capacity = 60; //Місткість
 
     public Gym(String name, boolean isOpen) {
         this.name = name;
@@ -27,15 +27,15 @@ public class Gym {
         isOpen = open;
     }
 
-    public static void setCurrentOccupancy(int currentOccupancy) {
+    public static void setCurrentOccupancy(int currentOccupancy) { //Використовується для оновлення загальної кількості людей у залі
         Gym.currentOccupancy = currentOccupancy;
     }
 
-    public static int getCapacity() {
+    public static int getCapacity() { //Отримати інформацію про максимальну кількість людей, яку може прийняти зал
         return capacity;
     }
 
-    public static void setCapacity(int capacity) {
+    public static void setCapacity(int capacity) { //Встановлює нове значення для вмістимості фітнес-залу
         Gym.capacity = capacity;
     }
 
@@ -62,7 +62,7 @@ public class Gym {
         }
     }
 
-    //Метод дозволяє контролювати кількість відвідувачів
+    // Статичний метод для управління кількістю відвідувачів спортзалу
     public static void incrementOccupancy(int additionalPeople) {
         if (currentOccupancy + additionalPeople <= capacity) {
             currentOccupancy += additionalPeople;

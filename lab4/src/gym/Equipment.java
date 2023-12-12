@@ -20,14 +20,6 @@ public class Equipment {
         System.out.println("——————————————————————————————");
     }
 
-    public void useFinalVariables() {
-        System.out.println("Using final variables:");
-        System.out.println("Equipment Name: " + name);
-        System.out.println("Equipment Description: " + description);
-        System.out.println("Availability: " + (availability ? "available" : "not available"));
-        System.out.println("——————————————————————————————");
-    }
-
     //Доступність обладнання
     public void checkAvailabilityForUser(boolean userIsMember) {
         final String userStatus = userIsMember ? "member" : "non-member"; // Локальна фінальна змінна для статусу користувача
