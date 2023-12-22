@@ -9,8 +9,8 @@ public class Main {
         Member member2 = new Member(2, "Anna Hit", 38, "Female", 50, 162, 1, 30);
         PremiumMember premiumMember = new PremiumMember(80, 1, "Vlad Sor", 22, "Male", 78, 182, 3, 150);
         Gym gym = new Gym("Keep Fit",  true );
-        Equipment equipment = new Equipment("Treadmill", "For running and walking", true);
         PremiumMember.PointsManager pointsManager = premiumMember.new PointsManager();
+        Equipment equipment = new Equipment();
 
         System.out.println("-------------GYM-------------");
         gym.setOpenStatus(true);
@@ -61,9 +61,6 @@ public class Main {
         equipment.displayInformation();
 
         equipment.checkAvailabilityForUser(true); // Якщо користувач - член спортзалу
-        equipment.checkAvailabilityForUser(false); // Якщо користувач - не є членом спортзалу
-
-
 
     }
 }
