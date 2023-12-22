@@ -21,6 +21,8 @@ public class Main {
         System.out.println("----------Member----------");
 
         member1.displayDetails(true); // Перевантажений метод для відображення деталей
+        member1.displayDetails(1);
+
         member1.isNeedToLostWeight();
 
         premiumMember.redeemPoints();

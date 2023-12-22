@@ -27,6 +27,9 @@ public class Member extends Person {
         }
     }
 
+    public void displayDetails(int memberId) {
+        System.out.println("Displaying member details by ID:");}
+
     private void information() {
         System.out.println("——————————————————————————————");
         System.out.println("ID: " + getMemberId());
